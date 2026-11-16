@@ -15,3 +15,9 @@
 | I01 | Implementar primeira unidade sustentada pelo mapa | a atribuir | pendente | Contrato selecionado de M09 | Código utilizável e verificação significativa |
 
 Os trabalhos iniciais de M05, M06 e M09 incluíram contribuições de Sol Medium, antes da alteração de modelos solicitada pelo usuário.
+
+M08/Q08 avança com a seleção de limiares, dependência de data, filtro de `SidebarTab` e um ramo que exclui itens não lidos documentados em [comandos e arquivamento](commands-and-archiving.md). O discriminador 1 foi associado estaticamente a `littleBrowser`; permanecem abertos os demais ramos e o destino que aplica o arquivamento. M06/Q04 mantém parcial o vínculo entre `discardWebContent`, o callback de finalização e o motor, detalhado em [suspensão de abas](tab-suspension.md).
+
+Revisão independente local com Luna max confirmou a associação do byte `1` a `littleBrowser` após análise do retorno do decodificador. A ordem do FieldRecord, isoladamente, não seria prova suficiente. A revisão não alterou arquivos nem abriu outra sessão Ghidra.
+
+Revisão local com Luna max identificou que o getter de características ainda precisava de prova por key path; o orquestrador seguiu o key path até `_tabTraits` e registrou as novas evidências. A revisão da ação de arquivamento sustentou a correspondência por ordem dos metadados, mas a análise mantém `autoArchiveItems` como candidato até confirmar o discriminador por um consumidor ou construtor explícito.
